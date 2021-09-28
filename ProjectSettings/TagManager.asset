@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Character
   - CinemachineTarget
+  - Beer
   layers:
   - Default
   - TransparentFX
