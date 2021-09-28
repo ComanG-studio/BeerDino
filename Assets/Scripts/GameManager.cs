@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
 
 
     // ProgressBar logic
-    [SerializeField] private Image _progressBarFill;
-    [SerializeField] private float _maxScore;
-    private float _currentScore = 0f;
+
 
     private void Awake()
     {
@@ -18,6 +16,9 @@ public class GameManager : MonoBehaviour
         
     }
 
+    [SerializeField] private Image _progressBarFill;
+    [SerializeField] private float _maxScore;
+    private float _currentScore = 0f;
     public void AddScore()
     {
         // add score to the ProgressBar
