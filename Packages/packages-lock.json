@@ -185,14 +185,13 @@
       }
     },
     "com.unity.visualeffectgraph": {
-      "version": "10.5.1",
+      "version": "11.0.0",
       "depth": 0,
-      "source": "registry",
+      "source": "builtin",
       "dependencies": {
-        "com.unity.shadergraph": "10.5.1",
-        "com.unity.render-pipelines.core": "10.5.1"
-      },
-      "url": "https://packages.unity.com"
+        "com.unity.shadergraph": "11.0.0",
+        "com.unity.render-pipelines.core": "11.0.0"
+      }
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
