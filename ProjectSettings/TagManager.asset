@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Character
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
@@ -39,6 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3331855163
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bubbles
+    uniqueID: 986095411
     locked: 0
