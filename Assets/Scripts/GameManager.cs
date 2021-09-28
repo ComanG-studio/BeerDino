@@ -1,28 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager game;
-    private float _score;
-    [SerializeField] private Image _progressBar;
+    public static GameManager game;
+
+
+    // ProgressBar logic
+    [SerializeField] private Image _progressBarFill;
+    private float _maxScore = 100f;
+    private float _currentScore = 0f;
 
     private void Awake()
     {
-        initGameManager();
+        InitGameManager();
+        
     }
 
-    /// <summary>
-    /// Add score to the ProgressBar
-    /// </summary>
-    private void AddProgress()
+    public void AddScore()
     {
-        // add score to the ProgressBar
-        _score += 1f;
-        _progressBar.transform.localScale = new Vector3(_score, 1f);
+
     }
 
-    private void initGameManager()
+    private void InitGameManager()
     {
         if (game == null)
             game = this;
