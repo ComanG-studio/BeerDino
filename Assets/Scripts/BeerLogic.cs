@@ -5,6 +5,6 @@ public class BeerLogic : MonoBehaviour
 {
     private void OnDestroy()
     {
-        GameManager.game.AddProgress();
+        GameManager.game.AddScore();
     }
 }
