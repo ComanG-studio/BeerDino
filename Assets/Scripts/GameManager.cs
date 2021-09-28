@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         InitGameManager();
-        
+
     }
 
     [SerializeField] private Image _progressBarFill;
