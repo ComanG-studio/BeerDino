@@ -4,6 +4,7 @@ using UnityEngine;
 public class Dino : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _vomitParticleSystem;
+    [SerializeField] private ParticleSystem _poisonFX;
     [SerializeField] private Rigidbody2D _vomit;
     [SerializeField] private Transform _vomitSpawnPoint;
     private Rigidbody2D _instantiatedVomit; // for store instantiate object to destroy it after.
@@ -28,6 +29,7 @@ public class Dino : MonoBehaviour
     {
         if (_vomitParticleSystem.isPlaying == true) return;
         _vomitParticleSystem.Play();
+        _poisonFX.Play();
 
         // spawn vomit
        _instantiatedVomit = Instantiate(_vomit, _vomitSpawnPoint);
@@ -38,6 +40,8 @@ public class Dino : MonoBehaviour
         if (_vomitParticleSystem.isPlaying == false) return;
         _vomitParticleSystem.Stop();
         _vomitParticleSystem.Clear();
+        _poisonFX.Stop();
+        _poisonFX.Clear();
 
         // variant 1 destroy stored instantiate object
         Destroy(_instantiatedVomit.gameObject);
