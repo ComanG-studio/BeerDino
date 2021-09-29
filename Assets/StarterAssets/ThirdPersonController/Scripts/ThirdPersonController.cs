@@ -14,7 +14,7 @@ namespace StarterAssets
 #endif
 	public class ThirdPersonController : MonoBehaviour
 	{
-		[Header("Player")]
+		[Header("Dino")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 2.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
@@ -37,7 +37,7 @@ namespace StarterAssets
 		[Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
 		public float FallTimeout = 0.15f;
 
-		[Header("Player Grounded")]
+		[Header("Dino Grounded")]
 		[Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
 		public bool Grounded = true;
 		[Tooltip("Useful for rough ground")]
