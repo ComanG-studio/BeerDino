@@ -15,8 +15,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Vomit()
+    public void PlayVomit()
     {
         _vomitParticleSystem.Play();
+    }
+
+    public void StopVomit()
+    {
+        _vomitParticleSystem.Stop();
+        _vomitParticleSystem.Clear();
     }
 }
