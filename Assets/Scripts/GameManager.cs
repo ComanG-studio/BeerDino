@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player _dino;
     [SerializeField] private Image _progressBarFill;
     [SerializeField] private float _maxScore;
-    [SerializeField] private float _currentScore = 0;
+    private float _currentScore = 0;
     public float CurrentScore { get; private set; }
 
     private void Awake()
@@ -17,10 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (_currentScore >= _maxScore)
-        {
-            _dino.Vomit();
-        }
+        VomitPermission();
     }
 
     public void AddScore()
@@ -36,5 +33,21 @@ public class GameManager : MonoBehaviour
         if (game == null)
             game = this;
         else if (game != this) Destroy(game);
+    }
+
+    /// <summary>
+    /// If dino progress bar is full, he can Vomit
+    /// NEED TO REFACTOR THIS
+    /// </summary>
+    private void VomitPermission()
+    {
+        if (_currentScore >= _maxScore)
+        {
+            _dino.PlayVomit();
+        }
+        else if (_currentScore < _maxScore)
+        {
+            _dino.StopVomit();
+        }
     }
 }
