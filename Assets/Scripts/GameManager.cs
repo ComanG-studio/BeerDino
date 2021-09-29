@@ -6,9 +6,18 @@ public class GameManager : MonoBehaviour
     public static GameManager game;
     [SerializeField] private Image _progressBarFill;
     [SerializeField] private float _maxScore;
-    private float _currentScore;
-    public float MAXScore { get; private set; }
-    public float CurrentScore { get; private set; }
+    [SerializeField][Range(0f,10f)] private float _currentScore = 0;
+
+    public float MAXScore
+    {
+        get => _maxScore;
+       private set => _maxScore = value;
+    }
+    public float CurrentScore
+    {
+        get => _currentScore;
+       private set => _currentScore = value;
+    }
 
     private void Awake()
     {
