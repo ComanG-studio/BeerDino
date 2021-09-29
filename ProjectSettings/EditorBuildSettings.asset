@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MICH-L_01.unity
-    guid: bb99706b6d4321e4ca24e2693d013fde
+    path: Assets/Scenes/ThirdPerson.unity
+    guid: 995a0dfd3fdd39143b4014ffcd22008c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ef20a1fbf88b63b4b94659a0a5166d21,
       type: 2}
