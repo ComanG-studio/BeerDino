@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -5,6 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem _vomitParticleSystem;
     [SerializeField] private Rigidbody2D _vomit;
     [SerializeField] private Transform _vomitSpawnPoint;
+    private Rigidbody2D _instantiatedVomit; // for store instantiate object to destroy it after.
 
     private void Update()
     {
@@ -21,11 +23,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    // NEED TO REFACTOR THIS (or not)
     public void PlayVomit()
     {
         if (_vomitParticleSystem.isPlaying == true) return;
         _vomitParticleSystem.Play();
-        Instantiate(_vomit, _vomitSpawnPoint);
+
+        // spawn vomit
+       _instantiatedVomit = Instantiate(_vomit, _vomitSpawnPoint);
     }
 
     public void StopVomit()
@@ -33,7 +38,12 @@ public class Player : MonoBehaviour
         if (_vomitParticleSystem.isPlaying == false) return;
         _vomitParticleSystem.Stop();
         _vomitParticleSystem.Clear();
-        // How to destroy? Destroy(_vomit);
+
+        // variant 1 destroy stored instantiate object
+        Destroy(_instantiatedVomit.gameObject);
+
+        // variant 2
+        //Destroy(GameObject.Find("Name"));
     }
 
 
