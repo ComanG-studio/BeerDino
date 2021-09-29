@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Dino : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _vomitParticleSystem;
     [SerializeField] private Rigidbody2D _vomit;

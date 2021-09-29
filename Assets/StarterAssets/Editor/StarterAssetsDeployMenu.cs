@@ -20,7 +20,7 @@ namespace StarterAssets
         private const string CinemachineVirtualCameraName = "PlayerFollowCamera";
 
         // tags
-        private const string PlayerTag = "Player";
+        private const string PlayerTag = "Dino";
         private const string MainCameraTag = "MainCamera";
         private const string CinemachineTargetTag = "CinemachineTarget";
 
