@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager game;
-    [SerializeField] private Player _dino;
     [SerializeField] private Image _progressBarFill;
     [SerializeField] private float _maxScore;
     private float _currentScore;
