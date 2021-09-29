@@ -1,24 +1,18 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager game;
-
-
-    // ProgressBar logic
-
+    [SerializeField] private Image _progressBarFill;
+    [SerializeField] private float _maxScore;
+    private float _currentScore;
 
     private void Awake()
     {
         InitGameManager();
-
     }
 
-    [SerializeField] private Image _progressBarFill;
-    [SerializeField] private float _maxScore;
-    private float _currentScore = 0f;
     public void AddScore()
     {
         // add score to the ProgressBar
