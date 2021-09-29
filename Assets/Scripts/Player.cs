@@ -25,4 +25,20 @@ public class Player : MonoBehaviour
         _vomitParticleSystem.Stop();
         _vomitParticleSystem.Clear();
     }
+
+    /// <summary>
+    /// If dino progress bar is full, he can Vomit
+    /// NEED TO REFACTOR THIS
+    /// </summary>
+    private void VomitPermission()
+    {
+        if (GameManager.game.CurrentScore >= GameManager.game.MAXScore)
+        {
+            PlayVomit();
+        }
+        else if (GameManager.game.CurrentScore < GameManager.game.MAXScore)
+        {
+            StopVomit();
+        }
+    }
 }
