@@ -16,6 +16,7 @@ public class Dino : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (GameManager.game.CurrentScore == GameManager.game.MAXScore) return;
         // if take a beer
         if (other.CompareTag("Beer"))
         {
@@ -60,11 +61,6 @@ public class Dino : MonoBehaviour
         if (GameManager.game.CurrentScore >= GameManager.game.MAXScore)
         {
             PlayVomit();
-
-        }
-        else if (GameManager.game.CurrentScore < GameManager.game.MAXScore)
-        {
-            StopVomit();
         }
     }
 }
