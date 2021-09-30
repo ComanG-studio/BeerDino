@@ -1,13 +1,25 @@
+using System;
+using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 
 public class Dino : MonoBehaviour
 {
+    // Need to do:
+    // Vomit cooldown timer
+
     [SerializeField] private ParticleSystem _vomitParticleSystem;
     [SerializeField] private ParticleSystem _poisonFX;
     [SerializeField] private Rigidbody2D _vomit;
     [SerializeField] private Transform _vomitSpawnPoint;
     private Rigidbody2D _instantiatedVomit; // for store instantiate object to destroy it after.
+    private CooldownTimer _cooldownTimer;
+    private float _vomitCooldown = 10f;
+
+    private void Start()
+    {
+        _cooldownTimer = GetComponent<CooldownTimer>();
+    }
 
     private void Update()
     {
@@ -25,7 +37,6 @@ public class Dino : MonoBehaviour
         }
     }
 
-    // NEED TO REFACTOR THIS (or not)
     public void PlayVomit()
     {
         if (_vomitParticleSystem.isPlaying == true) return;
@@ -51,11 +62,6 @@ public class Dino : MonoBehaviour
         //Destroy(GameObject.Find("Name"));
     }
 
-
-    /// <summary>
-    ///     If dino progress bar is full, he can Vomit
-    ///     NEED TO REFACTOR THIS
-    /// </summary>
     private void VomitEngine()
     {
         if (GameManager.game.CurrentScore >= GameManager.game.MAXScore)
@@ -63,4 +69,5 @@ public class Dino : MonoBehaviour
             PlayVomit();
         }
     }
+
 }
