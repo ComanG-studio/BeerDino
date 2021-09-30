@@ -29,13 +29,31 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         // add score to the ProgressBar
-        if (_currentScore >= _maxScore) { }
+        if (_currentScore >= _maxScore) return;
         else if (_currentScore < _maxScore)
         {
-            _currentFill += 1f / _maxScore;
-            _progressBarFill.transform.localScale = new Vector3(_currentFill, 1f);
+            AddProgressBarFill();
             _currentScore += 1f;
         }
+    }
+
+    public void ReduceScore()
+    {
+        if(_currentScore == 0) return;
+        ReduceProgressBarFill();
+        _currentScore -= 1f;
+    }
+
+    private void AddProgressBarFill()
+    {
+        _currentFill += 1f / _maxScore;
+        _progressBarFill.transform.localScale = new Vector3(_currentFill, 1f);
+    }
+
+    private void ReduceProgressBarFill()
+    {
+        _currentFill -= 1f / _maxScore;
+        _progressBarFill.transform.localScale = new Vector3(_currentFill, 1f);
     }
 
     private void InitGameManager()
