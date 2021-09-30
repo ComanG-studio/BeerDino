@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image _progressBarFill;
     [SerializeField] private float _maxScore;
     [SerializeField][Range(0f,10f)] private float _currentScore = 0;
+    private float _currentFill = 0;
 
     public float MAXScore
     {
@@ -27,8 +28,8 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         // add score to the ProgressBar
-        _currentScore += 1f / _maxScore;
-        _progressBarFill.transform.localScale = new Vector3(_currentScore, 1f);
+        _currentFill += 1f / _maxScore;
+        _progressBarFill.transform.localScale = new Vector3(_currentFill, 1f);
         _currentScore += 1f;
     }
 
