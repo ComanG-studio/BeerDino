@@ -184,6 +184,18 @@ MonoBehaviour:
   _poisonFX: {fileID: 457126002}
   _vomit: {fileID: 7602832430193760496, guid: 332b93db26fc5b24ca04f0bf1111da0e, type: 3}
   _vomitSpawnPoint: {fileID: 1860178854}
+--- !u!114 &51552088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51552079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97196a2a5c0d42b4a7454b691cff7b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &129267935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2515936733175659260, guid: 5390da6237ae98040a10e0711e26cc9f,
@@ -1676,8 +1688,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 7abc0e7a9d801e14eb4ba5d0e1b4d844, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 7abc0e7a9d801e14eb4ba5d0e1b4d844, type: 3}
       propertyPath: EmissionModule.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 7abc0e7a9d801e14eb4ba5d0e1b4d844, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 7abc0e7a9d801e14eb4ba5d0e1b4d844, type: 3}
       propertyPath: EmissionModule.enabled
